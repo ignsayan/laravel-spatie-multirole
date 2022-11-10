@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,7 @@ class HomeController extends Controller
     {
         if(Auth::user()->hasRole('admin'))
         {
-            return view('admin.dashboard');
+            return Redirect::route('admin.dashboard');
         }
         else if(Auth::user()->hasRole('customer'))
         {
