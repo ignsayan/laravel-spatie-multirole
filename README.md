@@ -2,7 +2,7 @@
 `composer install` <p>
 `npm install` <p>
 *development mode* `npm run dev` <p>
-*for production mode* `npm run build`
+*for production* `npm run build`
 
 ### Create Migration
 `php artisan migrate`
