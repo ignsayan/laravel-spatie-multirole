@@ -32,11 +32,11 @@ class HomeController extends Controller
         }
         else if(Auth::user()->hasRole('customer'))
         {
-            return view('customer.dashboard');
+            return Redirect::route('customer.dashboard');
         }
         else if(Auth::user()->hasRole('manager'))
         {
-            return view('manager.dashboard');
+            return Redirect::route('manager.dashboard');
         }
         else return view('default');
     }

@@ -8,13 +8,13 @@ use Spatie\Permission\Models\Role;
 
 class ApiController extends Controller
 {
-    function roles()
+    function adminRequestRoles()
     {
         $roles = Role::whereNot('name', 'admin')->get();
         return response()->json($roles);
     }
 
-    function permissions($roleId)
+    function adminRequestPermissions($roleId)
     {
         $active = Role::find($roleId);
         $selected = [];

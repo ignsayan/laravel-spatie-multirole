@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(ApiController::class)->group(function () {
-    Route::get('roles', 'roles')->name('roles');
-    Route::get('permissions/{roleid}', 'permissions')->name('permissions');
+    Route::get('roles', 'adminRequestRoles')->name('roles');
+    Route::get('permissions/{roleid}', 'adminRequestPermissions')->name('permissions');
 });
