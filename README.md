@@ -8,11 +8,11 @@
 `php artisan migrate`
 
 ### Necessory Stuffs
-*create user roles:* `php artisan create:role` <br>
-custom roles can be created by optional parameters <br>
+*create user roles:* `php artisan create:role` <p>
+custom roles can be created by optional parameters <p>
 `php artisan create:role optionalrolename` <p>
 
-*create permission:* `php artisan create:permission` <br>
+*create permission:* `php artisan create:permission` <p>
 custom permission can also be created same as role <p>
 
 *create super-admin:* `php artisan create:admin`
