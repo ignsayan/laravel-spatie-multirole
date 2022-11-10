@@ -26,15 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->hasRole('admin'))
+        if(Auth::user()->hasRole(ROLE_ADMIN))
         {
             return Redirect::route('admin.dashboard');
         }
-        else if(Auth::user()->hasRole('customer'))
+        else if(Auth::user()->hasRole(ROLE_CUSTOMER))
         {
             return Redirect::route('customer.dashboard');
         }
-        else if(Auth::user()->hasRole('manager'))
+        else if(Auth::user()->hasRole(ROLE_MANAGER))
         {
             return Redirect::route('manager.dashboard');
         }

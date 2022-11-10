@@ -32,7 +32,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $roles = Role::whereNot('name', 'admin')->pluck('name');
+        $roles = Role::whereNot('name', ROLE_ADMIN)->pluck('name');
         return view('admin.register', ['roles' => $roles]);
     }
 
@@ -58,7 +58,7 @@ class AdminController extends Controller
     public function show()
     {
         $users = User::whereHas('roles', function ($query) {
-            $query->whereNot('name', 'admin');
+            $query->whereNot('name', ROLE_ADMIN);
         })->get();
         return view('admin.display', ['users' => $users]);
     }
@@ -72,7 +72,7 @@ class AdminController extends Controller
     public function edit($uuid)
     {
         $data = User::where('uuid', $uuid)->firstOrFail();
-        $roles = Role::whereNot('name', 'admin')->pluck('name');
+        $roles = Role::whereNot('name', ROLE_ADMIN)->pluck('name');
         return view('admin.update', ['user' => $data, 'roles' => $roles]);
     }
 

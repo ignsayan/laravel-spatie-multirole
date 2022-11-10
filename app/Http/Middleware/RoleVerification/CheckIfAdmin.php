@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\RoleVerification;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-class CheckAdmin
+class CheckIfAdmin
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole(ROLE_ADMIN)) {
             return $next($request);
         }
         return abort(403);

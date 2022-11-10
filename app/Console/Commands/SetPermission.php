@@ -29,13 +29,13 @@ class SetPermission extends Command
      */
     public function handle()
     {
-        $this->argument('permission') ? Permission::create(['name' => $this->argument('permission')])
-            :
-            DB::transaction(function () {
-                Permission::create(['name' => 'create']);
-                Permission::create(['name' => 'update']);
-                Permission::create(['name' => 'delete']);
-                Permission::create(['name' => 'display']);
+        $this->argument('permission')
+            ? Permission::create(['name' => $this->argument('permission')])
+            : DB::transaction(function () {
+                Permission::create(['name' => PERMISSION_CREATE]);
+                Permission::create(['name' => PERMISSION_UPDATE]);
+                Permission::create(['name' => PERMISSION_DELETE]);
+                Permission::create(['name' => PERMISSION_DISPLAY]);
             });
 
         return Command::SUCCESS;

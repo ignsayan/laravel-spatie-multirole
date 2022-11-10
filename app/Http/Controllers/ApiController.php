@@ -10,7 +10,7 @@ class ApiController extends Controller
 {
     function adminRequestRoles()
     {
-        $roles = Role::whereNot('name', 'admin')->get();
+        $roles = Role::whereNot('name', ROLE_ADMIN)->get();
         return response()->json($roles);
     }
 

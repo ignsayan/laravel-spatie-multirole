@@ -39,7 +39,7 @@ class CreateAdmin extends Command
             'name'  => $name,
             'email' => $mail,
             'password' => $password
-        ])->assignRole('admin');
+        ])->assignRole(ROLE_ADMIN);
 
         $this->info('Admin Created Successfully !!');
     }

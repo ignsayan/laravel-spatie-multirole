@@ -33,9 +33,9 @@ class CreateRoles extends Command
         $this->argument('role') ? Role::create(['name' => $this->argument('role')])
             :
             DB::transaction(function () {
-                Role::create(['name' => 'admin']);
-                Role::create(['name' => 'customer']);
-                Role::create(['name' => 'manager']);
+                Role::create(['name' => ROLE_ADMIN]);
+                Role::create(['name' => ROLE_CUSTOMER]);
+                Role::create(['name' => ROLE_MANAGER]);
             });
 
         return Command::SUCCESS;
