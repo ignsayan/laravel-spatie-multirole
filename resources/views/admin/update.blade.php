@@ -6,7 +6,6 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Update User') }}</div>
-
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.edit-user', ['uuid' => $user->uuid]) }}">
                             @csrf
@@ -19,7 +18,6 @@
                                         value="{{ $user->name }}" required autocomplete="name">
                                 </div>
                             </div>
-
                             <div class="row mb-3">
                                 <label for="email"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
@@ -29,7 +27,6 @@
                                         value="{{ $user->email }}" required autocomplete="email">
                                 </div>
                             </div>
-
                             {{-- <div class="row mb-3">
                                 <label for="role"
                                     class="col-md-4 col-form-label text-md-end">{{ __('Change Role') }}</label>
@@ -47,10 +44,9 @@
                                     </select>
                                 </div>
                             </div> --}}
-
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-dark">
                                         {{ __('Update') }}
                                     </button>
                                 </div>

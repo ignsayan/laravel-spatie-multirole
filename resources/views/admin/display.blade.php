@@ -28,8 +28,8 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('admin.edit-user', ['uuid' => $user->uuid]) }}"
-                                                class="btn btn-primary">Edit</a>
-                                            <button class="btn btn-danger">Delete</button>
+                                                class="btn btn-dark">Edit</a>
+                                            &nbsp;<button class="btn btn-dark">Delete</button>
                                         </td>
                                     </tr>
                                 @endforeach
