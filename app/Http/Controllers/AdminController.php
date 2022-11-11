@@ -112,6 +112,6 @@ class AdminController extends Controller
         $roleId = $request->role;
         $permissions = $request->permission ? $request->permission : [];
         $action->execute($roleId, $permissions);
-        return Redirect::back()->with('configured', 'Permissions Updated !!');
+        return Redirect::back()->with('configured', 'Congratulation !! Role updated with new permissions');
     }
 }

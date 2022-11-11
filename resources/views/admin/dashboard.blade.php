@@ -6,7 +6,7 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Create new user</h5>
+                        <h5 class="card-title">Add new user</h5>
                         <p class="card-text">New user with specific roles as per requirement</p>
                         <a href="{{ route('admin.create-user') }}">
                             <button type="button" class="btn btn-dark">Create User</button>
@@ -40,10 +40,10 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Set Permissions</h5>
-                        <p class="card-text">Select or remove permissions according to roles</p>
+                        <h5 class="card-title">Update settings</h5>
+                        <p class="card-text">Select or remove permissions based on user roles</p>
                         <a href="{{ route('admin.settings') }}">
-                            <button type="button" class="btn btn-dark">Permissions</button>
+                            <button type="button" class="btn btn-dark">Configuration</button>
                         </a>
                     </div>
                 </div>
