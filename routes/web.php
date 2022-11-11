@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'verify.customer'])
     ->prefix('customer')
@@ -20,6 +20,6 @@ Route::middleware(['auth', 'verify.manager'])
         Route::get('dashboard', 'index')->name('manager.dashboard');
     });
 
-Route::get('/', function () {
+Route::get('/products', function () {
     return view('product.index');
 })->name('products');

@@ -19,7 +19,6 @@
                                 <th scope="col">Category</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Price (INR)</th>
-                                <th scope="col">Perform Operations</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,8 +29,14 @@
                                 <td>nvidia 30 series based desktop gpu</td>
                                 <td>42,000</td>
                                 <td>
-                                    <a href="javascript:void()" class="btn btn-dark">Edit</a>
-                                    &nbsp;<button class="btn btn-danger">Delete</button>
+                                    @if (Auth::check() && Auth::user()->hasRole(ROLE_ADMIN))
+                                        <a href="javascript:void()" class="btn btn-dark">Edit</a>
+                                        &nbsp;<button class="btn btn-danger">Delete</button>
+                                    @elseif (Auth::check() && Auth::user()->hasRole(ROLE_MANAGER))
+                                        <a href="javascript:void()" class="btn btn-dark">Manage Item</a>
+                                    @else
+                                        <a href="javascript:void()" class="btn btn-dark">Place Order</a>
+                                    @endif
                                 </td>
                             </tr>
                         </tbody>
