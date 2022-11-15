@@ -19,3 +19,6 @@ custom permission can also be created same as role <p>
 
 ### Start Dev Server
 `php artisan serve`
+
+### Globally Host Project Files
+`ngrok --scheme http http 8000`
