@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Active Users') }}</div>
+                <div class="card-header">{{ __('Registered Users') }}</div>
                 <div class="card-body">
                     <table class="table table-hover table-borderless">
                         <thead class="thead-dark">
@@ -38,4 +39,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
