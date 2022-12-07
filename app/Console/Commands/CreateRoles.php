@@ -14,14 +14,14 @@ class CreateRoles extends Command
      *
      * @var string
      */
-    protected $signature = 'create:role {role?}';
+    protected $signature = 'create:role {role}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Creates Role';
+    protected $description = 'Creates a new role';
 
     /**
      * Execute the console command.
@@ -30,14 +30,7 @@ class CreateRoles extends Command
      */
     public function handle()
     {
-        $this->argument('role') ? Role::create(['name' => $this->argument('role')])
-            :
-            DB::transaction(function () {
-                Role::create(['name' => ROLE_ADMIN]);
-                Role::create(['name' => ROLE_CUSTOMER]);
-                Role::create(['name' => ROLE_MANAGER]);
-            });
-
+        Role::create(['name' => $this->argument('role')]);
         return Command::SUCCESS;
     }
 }

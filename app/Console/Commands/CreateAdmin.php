@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class CreateAdmin extends Command
@@ -40,6 +41,8 @@ class CreateAdmin extends Command
             'email' => $mail,
             'password' => $password
         ])->assignRole(ROLE_ADMIN);
+
+        Role::findByName(ROLE_ADMIN)->givePermissionTo(Permission::all());
 
         $this->info('Admin Created Successfully !!');
     }
