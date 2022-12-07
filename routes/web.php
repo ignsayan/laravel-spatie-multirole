@@ -12,6 +12,7 @@ Route::middleware(['auth', 'verify.customer'])
     ->prefix('customer')
     ->controller(CustomerController::class)->group(function () {
         Route::get('dashboard', 'index')->name('customer.dashboard');
+        Route::get('checkout/{uuid}', 'processCheckout')->name('customer.checkout');
     });
 
 Route::middleware(['auth', 'verify.manager'])

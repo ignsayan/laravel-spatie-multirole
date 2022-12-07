@@ -35,7 +35,8 @@
                                     @elseif (Auth::check() && Auth::user()->hasRole(ROLE_MANAGER))
                                         <a href="javascript:void()" class="btn btn-dark">Manage Item</a>
                                     @else
-                                        <a href="javascript:void()" class="btn btn-dark">Place Order</a>
+                                        <a href="{{ route('customer.checkout', ['uuid' => Str::uuid()]) }}"
+                                            class="btn btn-dark">Place Order</a>
                                     @endif
                                 </td>
                             </tr>
