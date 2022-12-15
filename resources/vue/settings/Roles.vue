@@ -9,7 +9,11 @@
                 @change="changeRole()"
             >
                 <option value="">Choose any role from the dropdown</option>
-                <option v-for="role in roles" :key="role.id" v-bind:value="role.id">
+                <option
+                    v-for="role in roles"
+                    :key="role.id"
+                    v-bind:value="role.id"
+                >
                     Selected role as
                     {{ role.name.charAt(0).toUpperCase() + role.name.slice(1) }}
                 </option>
@@ -26,7 +30,7 @@
 import Permissions from "./Permissions.vue";
 
 export default {
-    components: {Permissions},
+    components: { Permissions },
     data() {
         return {
             activePermissions: [],

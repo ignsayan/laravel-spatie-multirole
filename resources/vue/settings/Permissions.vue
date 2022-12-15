@@ -16,7 +16,9 @@
                             type="checkbox"
                             v-bind:value="permission.name"
                         />
-                        <label class="form-check-label">{{ permission.name }}-user</label>
+                        <label class="form-check-label"
+                            >{{ permission.name }}-user</label
+                        >
                     </div>
                 </div>
             </div>
@@ -36,7 +38,9 @@
                             type="checkbox"
                             v-bind:value="permission.name"
                         />
-                        <label class="form-check-label">{{ permission.name }}-user</label>
+                        <label class="form-check-label"
+                            >{{ permission.name }}-user</label
+                        >
                     </div>
                 </div>
             </div>
