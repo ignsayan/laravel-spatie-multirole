@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 
 class Permissions extends Seeder
@@ -16,11 +15,14 @@ class Permissions extends Seeder
      */
     public function run()
     {
-        DB::transaction(function () {
-            Permission::create(['name' => PERMISSION_CREATE]);
-            Permission::create(['name' => PERMISSION_UPDATE]);
-            Permission::create(['name' => PERMISSION_DELETE]);
-            Permission::create(['name' => PERMISSION_DISPLAY]);
-        });
+        $permissions = [
+
+            ['name' => PERMISSION_CREATE],
+            ['name' => PERMISSION_UPDATE],
+            ['name' => PERMISSION_DELETE],
+            ['name' => PERMISSION_DISPLAY]
+        ];
+
+        Permission::insert($permissions);
     }
 }

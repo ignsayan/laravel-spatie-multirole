@@ -30,7 +30,7 @@ class CreateRoles extends Command
      */
     public function handle()
     {
-        Role::create(['name' => $this->argument('role')]);
+        Role::create(['name' => \Str::snake($this->argument('role'))]);
         return Command::SUCCESS;
     }
 }
