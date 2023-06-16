@@ -30,18 +30,15 @@ class CreateAdmin extends Command
      */
     public function handle()
     {
-        $name = $this->ask('Enter Username');
-        $mail = $this->ask('Enter Email ID');
-        $password = \Hash::make($this->secret('Enter Password'));
-
         $user = User::create([
-            'uuid' => str()->uuid(),
-            'name'  => $name,
-            'email' => $mail,
-            'password' => $password
+
+            'uuid' => \Str::uuid(),
+            'name'  => $this->ask('Enter Username'),
+            'email' => $this->ask('Enter Email ID'),
+            'password' => \Hash::make($this->secret('Enter Password'))
         ]);
 
-        $user->assignRole(ROLE_ADMIN); // ASSIGN ADMIN ROLE TO USER
+        $user->assignRole(ROLE_ADMIN);
 
         Role::findByName(ROLE_ADMIN)->givePermissionTo(Permission::all());
 
